@@ -1,0 +1,26 @@
+<div class="hero-body">
+  <div class="chat-container">
+    <div class="landbot-chat">
+      <div class="landbot-header">
+        <h1 class="subtitle">{{title}}</h1>
+      </div>
+
+      <div id="landbot-messages-container" class="landbot-messages-container">
+        <article *ngFor="let message of orderedMessages()"
+          class="media landbot-message">
+          <figure class="media-left landbot-message-avatar">
+            <p class="image is-64x64">
+              <img class="is-rounded" src="http://i.pravatar.cc/100" />
+            </p>
+          </figure>
+          <div class="media-content landbot-message-content">
+            <div class="content">
+              <p>{{ message.text }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="hero-body">
+  <div class="chat-container">
+    <div class="landbot-chat">
+      <div class="landbot-header">
+        <h1 class="subtitle">{{title}}</h1>
+      </div>
+
+      <div id="landbot-messages-container" class="landbot-messages-container">
+        <article *ngFor="let message of chat.messages"
+          class="media landbot-message">
+          <div class="media-content landbot-message-content">
+            <div class="content">
+              <p>{{ message }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="landbot-input-container">
+        <div class="field">
+          <div class="control" id="control">
+            <input
+              class="landbot-input"
+              type="text"
+              placeholder="Type here..."
+              [(ngModel)]="chat.messageValue"
+              (keyup)="submitMessageKeyUp($event)">
+            <a class="button landbot-input-send"
+              (click)="submitMessage()">
+              <span class="icon is-large">
+                <i class="fas fa-paper-plane fa-lg"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
